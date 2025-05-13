@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.get('/', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM projects');
+    const result = await pool.query('SELECT * FROM public.projects');
     res.json(result.rows);
   } catch (err) {
     console.error('Error executing query', err.stack);
